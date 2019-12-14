@@ -1,0 +1,38 @@
+18:39:01.094 karate.env system property was: null 
+18:39:02.097 request:
+1 > POST http://dummy.restapiexample.com/api/v1/create
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 48
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: dummy.restapiexample.com
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_144)
+{"name":"Hasan SAS","salary":"21000","age":"32"}
+
+18:39:03.719 response time in milliseconds: 1610.50
+1 < 200
+1 < Accept-Ranges: bytes
+1 < Access-Control-Allow-Origin: *
+1 < Access-Control-Expose-Headers: Content-Type, X-Requested-With, X-authentication, X-client
+1 < Age: 0
+1 < Cache-Control: no-store, no-cache, must-revalidate
+1 < Content-Length: 62
+1 < Content-Type: text/html; charset=UTF-8
+1 < Date: Sat, 14 Dec 2019 12:39:05 GMT
+1 < Expires: Thu, 19 Nov 1981 08:52:00 GMT
+1 < Pagespeed: off
+1 < Pragma: no-cache
+1 < Referrer-Policy: 
+1 < Response: 200
+1 < Server: nginx/1.16.0
+1 < Set-Cookie: [PHPSESSID=4058fe6b52b50ac77f29661e7cc23fdb; path=/, ezoadgid_133674=-1; Path=/; Domain=restapiexample.com; Expires=Sat, 14 Dec 2019 13:09:04 UTC, ezoref_133674=; Path=/; Domain=restapiexample.com; Expires=Sat, 14 Dec 2019 14:39:04 UTC, ezoab_133674=mod70; Path=/; Domain=restapiexample.com; Expires=Sat, 14 Dec 2019 14:39:04 UTC, active_template::133674=pub_site.1576327144; Path=/; Domain=restapiexample.com; Expires=Mon, 16 Dec 2019 12:39:04 UTC, ezCMPCCS=true; Path=/; Domain=restapiexample.com; Expires=Mon, 14 Dec 2020 12:39:05 GMT]
+1 < Vary: Accept-Encoding,X-APP-JSON
+1 < Via: 1.1 varnish (Varnish/6.0)
+1 < X-Ezoic-Cdn: Miss
+1 < X-Middleton-Response: 200
+1 < X-Shard: 
+1 < X-Sol: pub_site
+1 < X-Varnish: 233932701
+1 < X-Vcache: Miss
+{"name":"Hasan SAS","salary":"21000","age":"32","id":"174120"}
+
