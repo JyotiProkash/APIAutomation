@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: features.APITestRunner
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.849 sec <<< FAILURE! - in features.APITestRunner
-[1:7] Create a new employee.([CreateAnEmployee])  Time elapsed: 3.196 sec  <<< ERROR!
-com.intuit.karate.exception.KarateException: CreateAnEmployee.feature:14 - assert evaluated to false: createdData.age == ["32"]
-	at ✽.And assert createdData.age == ["32"] (CreateAnEmployee.feature:14)
-
