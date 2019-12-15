@@ -172,26 +172,26 @@
 </div>
 <div class="step-row">
 <div class="step-cell passed">Given url baseUrl</div>
-<div class="time-cell passed">0.000069</div>
+<div class="time-cell passed">0.000089</div>
 </div>
-<div class="preformatted">18:39:01.094 karate.env system property was: null</div>
+<div class="preformatted">12:44:32.312 karate.env system property was: null</div>
 <div class="step-row">
 <div class="step-cell passed">When header Content-Type = 'application/json'</div>
-<div class="time-cell passed">0.009859</div>
+<div class="time-cell passed">0.00344</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">Given path '/create'</div>
-<div class="time-cell passed">0.006093</div>
+<div class="time-cell passed">0.007294</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">And request {"name":"Hasan SAS", "salary":"21000", "age":"32"}</div>
-<div class="time-cell passed">0.000427</div>
+<div class="time-cell passed">0.000455</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">When method post</div>
-<div class="time-cell passed">2.49956</div>
+<div class="time-cell passed">2.997448</div>
 </div>
-<div class="preformatted">18:39:02.097 request:
+<div class="preformatted">12:44:33.938 request:
 1 &gt; POST http://dummy.restapiexample.com/api/v1/create
 1 &gt; Accept-Encoding: gzip,deflate
 1 &gt; Connection: Keep-Alive
@@ -201,44 +201,46 @@
 1 &gt; User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_144)
 {"name":"Hasan SAS","salary":"21000","age":"32"}
 
-18:39:03.719 response time in milliseconds: 1610.50
+12:44:35.544 response time in milliseconds: 1601.56
 1 &lt; 200
 1 &lt; Accept-Ranges: bytes
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Access-Control-Expose-Headers: Content-Type, X-Requested-With, X-authentication, X-client
 1 &lt; Age: 0
 1 &lt; Cache-Control: no-store, no-cache, must-revalidate
-1 &lt; Content-Length: 62
+1 &lt; Content-Length: 131
 1 &lt; Content-Type: text/html; charset=UTF-8
-1 &lt; Date: Sat, 14 Dec 2019 12:39:05 GMT
+1 &lt; Date: Sun, 15 Dec 2019 06:44:36 GMT
 1 &lt; Expires: Thu, 19 Nov 1981 08:52:00 GMT
 1 &lt; Pagespeed: off
 1 &lt; Pragma: no-cache
 1 &lt; Referrer-Policy: 
 1 &lt; Response: 200
 1 &lt; Server: nginx/1.16.0
-1 &lt; Set-Cookie: [PHPSESSID=4058fe6b52b50ac77f29661e7cc23fdb; path=/, ezoadgid_133674=-1; Path=/; Domain=restapiexample.com; Expires=Sat, 14 Dec 2019 13:09:04 UTC, ezoref_133674=; Path=/; Domain=restapiexample.com; Expires=Sat, 14 Dec 2019 14:39:04 UTC, ezoab_133674=mod70; Path=/; Domain=restapiexample.com; Expires=Sat, 14 Dec 2019 14:39:04 UTC, active_template::133674=pub_site.1576327144; Path=/; Domain=restapiexample.com; Expires=Mon, 16 Dec 2019 12:39:04 UTC, ezCMPCCS=true; Path=/; Domain=restapiexample.com; Expires=Mon, 14 Dec 2020 12:39:05 GMT]
+1 &lt; Set-Cookie: [PHPSESSID=a10be50940dfb76aceaae69bf379da9d; path=/, ezoadgid_133674=-1; Path=/; Domain=restapiexample.com; Expires=Sun, 15 Dec 2019 07:14:35 UTC, ezoref_133674=; Path=/; Domain=restapiexample.com; Expires=Sun, 15 Dec 2019 08:44:35 UTC, ezoab_133674=mod6-c; Path=/; Domain=restapiexample.com; Expires=Sun, 15 Dec 2019 08:44:35 UTC, active_template::133674=pub_site.1576392275; Path=/; Domain=restapiexample.com; Expires=Tue, 17 Dec 2019 06:44:35 UTC, ezCMPCCS=true; Path=/; Domain=restapiexample.com; Expires=Tue, 15 Dec 2020 06:44:36 GMT]
 1 &lt; Vary: Accept-Encoding,X-APP-JSON
 1 &lt; Via: 1.1 varnish (Varnish/6.0)
 1 &lt; X-Ezoic-Cdn: Miss
 1 &lt; X-Middleton-Response: 200
-1 &lt; X-Shard: 
+1 &lt; X-Shard: 100224107
 1 &lt; X-Sol: pub_site
-1 &lt; X-Varnish: 233932701
+1 &lt; X-Varnish: 244707848
 1 &lt; X-Vcache: Miss
-{"name":"Hasan SAS","salary":"21000","age":"32","id":"174120"}</div>
+{"error":{"text":SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Hasan SAS' for key 'employee_name_unique'}}</div>
 <div class="step-row">
 <div class="step-cell passed">Then status 200</div>
-<div class="time-cell passed">0.000032</div>
+<div class="time-cell passed">0.000023</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">And def createdData = response</div>
-<div class="time-cell passed">0.000077</div>
+<div class="time-cell passed">0.000089</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">And assert createdData.age == ["32"]</div>
-<div class="time-cell passed">0.0244</div>
+<div class="step-cell failed">And assert createdData.age == ["32"]</div>
+<div class="time-cell failed">0.095267</div>
 </div>
+<div class="preformatted">12:44:35.644 assertion failed: assert evaluated to false: createdData.age == ["32"]
+CreateAnEmployee.feature:14 - assert evaluated to false: createdData.age == ["32"]</div>
 </div>
 </div>
 </body>
