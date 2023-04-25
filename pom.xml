@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -12,11 +12,17 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<maven.compiler.version>3.1</maven.compiler.version>
-		<maven.surefire.version>2.18.1</maven.surefire.version>
-		<karate.version>0.9.3</karate.version>
-		<cucumber.report.version>4.9.0</cucumber.report.version>
+		<java.version>18</java.version>
+		<maven.compiler.version>3.10.1</maven.compiler.version>
+		<maven.surefire.version>3.0.0</maven.surefire.version>
+		<karate.version>1.4.0</karate.version>
+		<karate.junit5.version>1.4.0</karate.junit5.version>
+		<junit.platform.commons>1.9.2</junit.platform.commons>
+		<junit.platform.engine>1.9.2</junit.platform.engine>
+		<junit.jupiter.api>5.9.2</junit.jupiter.api>
+		<junit.jupiter.engine>5.9.2</junit.jupiter.engine>
+		<commons.codec.version>1.15</commons.codec.version>
+		<cucumber.report.version>5.7.5</cucumber.report.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -24,27 +30,51 @@
 			<artifactId>karate-core</artifactId>
 			<version>${karate.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.intuit.karate/karate-apache -->
+
+		<!-- https://mvnrepository.com/artifact/com.intuit.karate/karate-junit5 -->
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-apache</artifactId>
-			<version>${karate.version}</version>
+			<artifactId>karate-junit5</artifactId>
+			<version>${karate.junit5.version}</version>
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.intuit.karate/karate-junit4 -->
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-commons -->
 		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-junit4</artifactId>
-			<version>${karate.version}</version>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-commons</artifactId>
+			<version>${junit.platform.commons}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine -->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-engine</artifactId>
+			<version>${junit.platform.engine}</version>
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-ui</artifactId>
-			<version>${karate.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.api}</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.engine}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons.codec.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
@@ -89,8 +119,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<compilerArgument>-Werror</compilerArgument>
 				</configuration>
 			</plugin>
 		</plugins>
